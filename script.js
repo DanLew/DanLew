@@ -2,15 +2,35 @@ jQuery(document).ready(function($){
 
   setTimeout(function(){
 
-    startPage();
+    doAnimation();
 
-  }, 1000);
+  }, 300);
 
-  function startPage() {
+  $(window).scroll(function(){
 
-    $('.circle.start').removeClass('start');
-    $('.title.start').removeClass('start');
-    $('.sub-title.start').removeClass('start');
+    doAnimation();
+
+  })
+
+  function doAnimation() {
+
+    var allAnimators = $('.start'),
+        x = $(window).scrollTop(),
+        y = x + $(window).innerHeight();
+
+    for ( i = 0; i < allAnimators.length; i++ ) {
+
+      var z = $(allAnimators[i]).offset().top;
+
+      console.log(x + " " + y + " " + z);
+
+      if ( z > x && z < y ) {
+
+        $(allAnimators[i]).removeClass('start');
+
+      }
+
+    }
 
   }
 

@@ -36,6 +36,12 @@ span {
 
 }
 
+.screen-height.white {
+
+  background-color: #fff;
+
+}
+
 .center-area {
 
   position: absolute;
